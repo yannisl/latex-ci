@@ -1,0 +1,33 @@
+
+sudo: required
+dist: trusty
+language: r
+
+before_install:
+    - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+    
+install:
+    #- go get github.com/yannisl/gotex/tabular
+    #- go get github.com/yannisl/gotex/enviro
+    #- go get github.com/yannisl/gotex/mwe
+
+script:
+    #- go test -coverprofile=coverage.txt -covermode=atomic ./tabular
+    #- go test -coverprofile=coverage.txt -covermode=atomic ./enviro
+    - pdflatex mwe.tex -interaction=nonstopmode
+
+notifications:
+  email: false
+
+addons:
+    artifacts: true
+
+deploy:
+  provider: s3
+  access_key_id: AKIAJJUBFQFCFGQWXKAA
+  secret_access_key:
+    secure: jI2tq2JzQywiqEBMBy6ywSm1lfefr+d9ccCPbqUlaS06lZ9OdXyjvkkAfXap5CgHIcN6Kt9RwQwSXBQZf/7qdDuipWrHAjXvnHB6YwhTe4jG0UQv15b84MHPe7O5YYml6poF4WzzEGomDcV34RrogQdRlfD3OCA3WDGfxjzCD8SKzt8uCoQke1SyN8GSBUdq/nW0d3NX/S+DjDLohaF7/r+MdtKWesDxTSO+cm5QWjL5ZVgH2PYmVFfzgMNkSwAkk7/t1JFRq61Aur2rcjjEsa1Q4IHtcZegm4SdWfVvj4O0I3dhN7set0w1oMN0VBQKO6J1TNNZw2B/W1cNvYgNVVywrNOw4+nEdZbh/DcJcC5Wb1qTLDQjzTntEx66tnQ4mrOLbjjqzvdg7dHwoBE5Z1a0fO+o6d5LQZI8k72ANZH4w7+xQMGXn8EHRELmC6ecrJcK8QhWAln1iQfNPY6ioza2MXBXJIghOdV2wi/ngqWne2Pbg8FFZa/PPIi9czEyhTKavupglTdE/nAd8VIFY/pLLMFobW5Gq4IHxR+rN9HEK4ll8hmd4S964XjwJPoLhtFt2HeuGcWFCxFYJXsIdgY3gL9Vwt7Yr5x2H7N0PE0O8sdW0RzYkXDBnCvXBa2bELLZcWGDVtvzGukQQbtySmTgCXYUPD8Pw9hfYwYd3+o=
+  bucket: gotex
+  
+after_success:
+    #- bash <(curl -s https://codecov.io/bash)
