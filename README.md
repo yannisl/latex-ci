@@ -15,5 +15,34 @@ I don't claim this is the best or the most optimum way of running and testing do
 4.  An AWS account.
 5.  Keys for your buckets.
 
-  
+## Setting up the Project on travis-ci
+
+Once you have an account on travis-ci, you need to tell travis-ci which repository you want to integrate. Go to
+
+````
+https://travis-ci.org/profile/<user>
+````
+
+and check the repository you want to set-up. Follow up the instructions on the page to sync with Github etc.
+
+### Environment settings
+
+You can either encrypt your key accounts and secrets on the travis-cli and include them in your travis.yml file or you can set this on the travis website. I prefer that these are included in the yaml file as it minimizes hopping in and out of the console and into the browser.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
