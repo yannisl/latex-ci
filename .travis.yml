@@ -16,7 +16,6 @@ deploy:
   secret_access_key:
     secure: x/nN/jDr4Ns7v/VKrUFxUrarHyV+L0TntEZzGrN1rtyg+x2s74TuFoOjnNaTwRlZdRahZra7v/9nDGjx6KMAO530s93fHDE4/YKAnOQJrxFRyJ6gUZ4ES2Utx3xX05I5bhGO9xzulz/PL4mW7dLCdUdGJbvePy0sTP31LJteo4MZJyRQSHNzc+Xc2oDSKK4rrRIekvUzXHwhNoIMtgllXVnn5qIh5Hx000atdsVrZiRVV1bxGvUgD9mGXsCPwJ2rep91yJT8H+EspLdPvI4GlEaPa3RzBiani26humnh80RiKRM/hhlSNLB7fsVBvAtvcoyiFfpPxVSMUHRFlAoJjZFgm+1BcCWu5xrQMXn5ATldBtr35JkubgbNcyRS8DM2Mr9UsD74FiqxYRbYR4rs+7K5+/Hog37X90mI2qxilUWECMnJYKUpe1vTXtuyTretszCg4P1VVrEQyhivLVtZmYIuRC09W+n8ZeIv261dI9y/saMWvpn6TV2r0cwIaaKDHR/OL5r8hJdlogy5l9LBmUeu5tHpW/z+wm2VHZC9Kl4CizRGMHrO1V8KFyu4dP97ItWNOjjleHOvOlQIOPH5gwxkp6vBRVdaW6fZ9YMgs/w7mMXZJifjH6A5hI4BAgdTPEjwuSlgo1NiBG1RoJvR81f/8K/W8T7mjlW22LGYrb8=
   bucket: gotex
-  acl: private
-  on:
+   on:
     repo: yannisl/latex-ci
 after_success: 
